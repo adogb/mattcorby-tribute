@@ -1,0 +1,166 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body { 
+	background: url(images/mattcorby.jpg) no-repeat left top fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: "Open Sans", sans-serif;
+	color: #ddd;
+}
+
+/* TO ADD A BLACK TRANSLUSCENT BAND AT THE BOTTOM OF THE PAGE. NOT NEEDED ANYMORE SINCE BACKGROUND WAS LATER BLURRED
+
+body::after {
+	content:'';
+	position: fixed;
+	bottom:0;
+	background: linear-gradient(to top,black,rgba(0,0,0,0.7),rgba(0,0,0,0));
+	//the rgba(0,0,0,0.7) is not required for the syntax but to say that at 50% of the way, the opacity needs to be 0.7 (70%)
+	background: -webkit-linear-gradient(bottom,black,rgba(0,0,0,0.7),rgba(0,0,0,0));
+	background: -moz-linear-gradient(bottom,black,rgba(0,0,0,0.7),rgba(0,0,0,0));
+	background: -o-linear-gradient(bottom,black,rgba(0,0,0,0.7),rgba(0,0,0,0));
+	height:15%;
+	width:100%;
+}*/
+
+.fullheight {
+	height: 100vh;
+	position:relative;
+	z-index:2;
+}
+
+p, h4 {
+	padding-left:10px;
+}
+
+h4{
+	margin-top:20px;
+}
+h4:first-child {
+	margin-top:40px;
+}
+#iframe-wrap{
+	text-align:center;
+	margin-top:25px;
+}
+#home h1,h3{
+	text-align: center;
+}
+#home h1{
+	margin-bottom:20px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 100px;
+	font-weight:700;
+	margin-top:60px;
+}
+
+#home .fadein, #home a.bottomnav.fadein, nav.fadein { /*specificity of .bottomnav increased on purpose to override CSS declar. below */
+	opacity:1;
+}
+
+#home h1, #home h3, #home .bottomnav, nav {	
+	/*Add fade-in animation to cover page, see jQuery */
+	opacity:0;
+	-webkit-transition: opacity 2s ease-in;
+	-moz-transition: opacity 2s ease-in;
+	-ms-transition: opacity 2s ease-in;
+	-o-transition: opacity 2s ease-in;
+	transition: opacity 2s ease-in;
+	
+	-webkit-transition-delay: 1s;
+	-moz-transition-delay: 1s;
+	-ms-transition-delay: 1s;
+	-o-transition-delay: 1s;
+	transition-delay: 1s;
+}
+
+
+
+h3{
+	letter-spacing:.05em;
+}
+
+a:link, a:focus, a:active, a:visited {
+	text-decoration:none;
+	color:inherit;
+}
+
+nav > ul {
+	list-style-type: none;
+}
+
+nav {
+	position: fixed;
+	right:50px;
+	top:50%;
+	/*lines that follow: to shift it 50% of its height back up since we don't know the height of the nav*/
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+nav li > a{
+	font-size:32px;
+	line-height:65px;
+}
+
+a.currentSection{
+	color: #ED4055;
+}
+
+.bottomnav {
+	font-size:15px;
+	position:absolute;
+	left:50%;
+	bottom:30px;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	padding-top: 40px; /*padding-top to create space for the arrow in span*/
+	color: #ddd;
+}
+
+.bottomnav:hover {
+	/*background-color: rgba(255,255,255,0.5);*/
+	color: #fff;
+}
+
+.bottomnav span { /*arrow*/
+	position:absolute; 
+	top:0; /*to position the arrow above the link*/
+	left:50%;
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	box-sizing: border-box;
+}
+
+.bottomnav span.down { /*create an arrow with CSS: box with two sides, rotated 45deg*/
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.bottomnav span.up { /*create an arrow with CSS: box with two sides, rotated 45deg*/
+	border-right: 1px solid;
+	border-top: 1px solid;
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}

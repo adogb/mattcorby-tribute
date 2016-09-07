@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Matt Corby</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<nav role="navigation" class="nav">
+			<ul>
+				<li><a href="#home" class="currentSection"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li><a href="#facts"><span class="glyphicon glyphicon-user"></span></a></li>
+				<li><a href="#music"><span class="glyphicon glyphicon-music"></span></a></li>
+			</ul>
+		</nav>
+		<div class="container" id="home">
+			<div class="row">
+				<div class="col-xs-12 col-sm-7 col-sm-offset-4 fullheight">
+					<h1>Matt Corby</h1>
+					<h3>Singer, songwriter, musician</h3>
+					<a class="bottomnav" href="#facts"><span class="down"></span>Learn more about Matt</a>
+				</div>
+			</div>
+			
+		</div>
+		<div class="container" id="facts">
+			<div class="row">
+				<div class="col-xs-12 col-sm-7 col-sm-offset-4 fullheight">
+					<h4>At the origin</h4>
+					<p>Corby was raised in Oyster Bay, a suburban enclave of Sydney's Sutherland Shire. His first musical memory is 
+					being driven past a guitar shop as a five year old and being captivated by the rows of shiny 
+					instruments in the window. His dad, John, bought his son a 
+					three-quarter acoustic guitar, on which Corby started having one lesson a week. The first 
+					song he learned to play was <em>Greensleeves</em>, but his dedication began to wane and singing soon took priority.
+					At age 14 he left school, joined a Christian voca group called Iron and Clay and hit the road. During that time
+					he met 19-year-old Jarryd James.</p>
+					<h4>A big mess</h4>
+					<p>Corby later left the group and returned to school. In 2007 he participated to the show <em>Australian Idol</em>. Though Corby
+					finished second, for him the whole experience would turn out to be "a big mess". Corby describes the year after <em>Idol</em> as 
+					one of the most difficult of his life. Corby felt he had so much to prove. The five EPs he released before his new album <em>Telluric</em>
+					were born out of his desperation to prove he was more than an ex-<em>Idol</em> but also as a therapy.</p>
+					<h4>Recognition at last</h4>
+					<p>In 2011 his song <em>Brother</em> went on to win an ARIA for Song of the Year, and <em>Resolution</em> earned the same award a year later.</p>
+					<a class="bottomnav" href="#music"><span class="down"></span>Sit back and listen...</a>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="music">
+			<div class="row">
+				<div class="col-xs-12 col-sm-7 col-sm-offset-4 fullheight">
+					<h4>Creating <em>Telluric</em></h4>
+					<p>Corby came back to Sydney from Los Angeles after scrapping a full-length recording of the album. For two years he set to "learn a bunch
+					of musical instruments" to be able to create this album exactly like he envisionned it in his mind. Telluric was released in March 2016.</p>
+					<div id="iframe-wrap"><iframe width="560" height="315" src="https://www.youtube.com/embed/pPnA-Vs5ATU" frameborder="0" allowfullscreen></iframe></div>
+					<a class="bottomnav" href="#home"><span class="up"></span>Back to top</a>
+				</div>
+			</div>
+		</div>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+		<!-- waypoints jQuery plugin by http://imakewebthings.com/ : http://imakewebthings.com/jquery-waypoints/ -->
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			
+				//COVER PAGE ANIMATION
+				$("#home h1, #home h3, #home .bottomnav, nav").addClass("fadein");
+			
+				//SMOOTH SCROLLING
+				$('a[href*="#"]:not([href="#"])').click(function(event){
+					event.preventDefault(); //to avoid default anchor link behavior ie jump to anchor by default
+					var hash = this.hash; //takes the part #... of the clicked link as a string for instance "#music"
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					},500)
+				});
+			
+				//CHANGE OF CURRENT SECTION, USING WAYPOINT PLUGIN
+				
+				function changeNav (container){
+					$(".currentSection").removeClass("currentSection");
+					var id = container.id;
+					$('nav a[href=#'+id+']').addClass("currentSection");
+				}
+				
+				$(".container").waypoint(function(direction){
+					//'this' is the waypoint instance, element is the selector i.e. .container in this case
+					if (direction==='down'){ 
+						changeNav(this.element);
+					}
+				},{offset:'30%'});
+				$(".container").waypoint(function(direction){
+					if (direction==='up'){ 
+						changeNav(this.element); 
+					}
+				},{offset:'-30%'});
+			});
+		</script>
+	</body>
+</html>
