@@ -45,7 +45,10 @@ h4{
 h4:first-child {
 	margin-top:40px;
 }
-#iframe-wrap{
+iframe {
+	border:0;
+}
+.iframe-wrap{
 	text-align:center;
 	margin-top:25px;
 }
@@ -181,4 +184,26 @@ a.currentSection{
 
 #facts h3 {
 	margin-top:70px;
+}
+
+#externalLink {
+	color: #ED4055;
+}
+
+footer {
+	background-color: black;
+	height: 45px;
+	padding:10px 50px 0px 50px;	
+}
+
+footer .left {
+	float: left;
+}
+
+footer .right {
+	float: right;
+}
+
+#twitter, #twitter-matt{
+	margin-right:15px;
 }

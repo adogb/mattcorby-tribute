@@ -22,26 +22,24 @@
 				<li><a href="#facts"><span class="glyphicon glyphicon-user"></span></a></li>
 			</ul>
 		</nav>
-		<div class="container" id="home">
-			<div class="row">
+		<div class="container">
+			<div class="row" id="home">
 				<div class="col-xs-12 col-sm-7 col-sm-offset-4 fullheight">
 					<h1>Matt Corby</h1>
 					<h3>Singer, songwriter, musician</h3>
-					<div id="iframe-wrap"><iframe width="462" height="260" src="https://www.youtube.com/embed/pPnA-Vs5ATU" frameborder="0" allowfullscreen></iframe></div>
+					<div class="iframe-wrap"><iframe width="462" height="260" src="https://www.youtube.com/embed/pPnA-Vs5ATU" allowfullscreen></iframe></div>
 					<a class="bottomnav" href="#music"><span class="down"></span>Sit back and listen...</a>
 				</div>
 			</div>
-		</div>
-		<div class="container" id="music">
-			<div class="row">
+		
+			<div class="row" id="music">
 				<div class="col-xs-12 col-sm-7 col-sm-offset-4">
-					<div id="iframe-wrap"><iframe width="90%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/93194905&amp;color=ed4055&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe></div>
-					<div id="iframe-wrap"><iframe width="90%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/18064133&amp;color=ed4055&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe></div>
+					<div class="iframe-wrap"><iframe width="100%" height="166" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/93194905&amp;color=ed4055&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe></div>
+					<div class="iframe-wrap"><iframe width="100%" height="166" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/18064133&amp;color=ed4055&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe></div>
 				</div>
 			</div>
-		</div>
-		<div class="container" id="facts">
-			<div class="row">
+			
+			<div class="row" id="facts">
 				<div class="col-xs-12 col-sm-7 col-sm-offset-4">
 					<h3>About Matt Corby</h3>
 					<h4>At the origin</h4>
@@ -62,10 +60,33 @@
 					<h4>Creating <em>Telluric</em></h4>
 					<p>Corby came back to Sydney from Los Angeles after scrapping a full-length recording of the album. For two years he set to "learn a bunch
 					of musical instruments" to be able to create this album exactly like he envisionned it in his mind. Telluric was released in March 2016.</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-7 col-sm-offset-4" id="checkout">
+					<h4>If you want to know more, go check out Matt Corby's <a id="externalLink" href="http://mattcorby.com.au/home.htm?force=show">official page</a> or follow him on Twitter and Facebook:</h4>
+					<div class="text-center">
+						<a id="twitter-matt" href="https://twitter.com/mattcorby"><i class="fa fa-twitter-square fa-4x"></i></a>
+						<a id="facebook-matt" href="https://www.facebook.com/mattcorby"><i class="fa fa-facebook-square fa-4x"></i></a>
+					</div>
+
 					<a id="backtotop" href="#home"><span class="up"></span>Back to top</a>
 				</div>
 			</div>
 		</div>
+		<footer id="footer">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="left"><a href="http://www.audreydogbeh.com/">&copy; 2016 Audrey Dogbeh</a></div>
+					<div class="right">
+						<a id="twitter" href="https://twitter.com/_arya45"><i class="fa fa-twitter fa-2x"></i></a>
+						<a id="github" href="https://github.com/arya45"><i class="fa fa-github fa-2x"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
 		
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
 		<!-- waypoints jQuery plugin by http://imakewebthings.com/ : http://imakewebthings.com/jquery-waypoints/ -->
@@ -87,19 +108,19 @@
 			
 				//CHANGE OF CURRENT SECTION, USING WAYPOINT PLUGIN
 				
-				function changeNav (container){
+				function changeNav (row){
 					$(".currentSection").removeClass("currentSection");
-					var id = container.id;
+					var id = row.id;
 					$('nav a[href=#'+id+']').addClass("currentSection");
 				}
 				
-				$(".container").waypoint(function(direction){
-					//'this' is the waypoint instance, element is the selector i.e. .container in this case
+				$(".row").waypoint(function(direction){
+					//'this' is the waypoint instance, element is the selector i.e. .row in this case
 					if (direction==='down'){ 
 						changeNav(this.element);
 					}
 				},{offset:'30%'});
-				$(".container").waypoint(function(direction){
+				$(".row").waypoint(function(direction){
 					if (direction==='up'){ 
 						changeNav(this.element); 
 					}
