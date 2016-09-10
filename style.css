@@ -57,7 +57,7 @@ h4:first-child {
 	font-family: 'Oswald', sans-serif;
 	font-size: 100px;
 	font-weight:700;
-	margin-top:60px;
+	margin-top:40px;
 }
 
 #home .fadein, #home a.bottomnav.fadein, nav.fadein { /*specificity of .bottomnav increased on purpose to override CSS declar. below */
@@ -116,11 +116,25 @@ a.currentSection{
 	color: #ED4055;
 }
 
+#backtotop{
+	font-size:15px;
+	position:relative;
+	left:50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	color: #ddd;
+	display:inline-block;
+	margin-top:50px;
+	margin-bottom:20px;
+}
 .bottomnav {
 	font-size:15px;
 	position:absolute;
 	left:50%;
-	bottom:30px;
+	bottom:20px;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
@@ -130,7 +144,7 @@ a.currentSection{
 	color: #ddd;
 }
 
-.bottomnav:hover {
+.bottomnav:hover, #backtotop:hover {
 	/*background-color: rgba(255,255,255,0.5);*/
 	color: #fff;
 }
@@ -163,4 +177,8 @@ a.currentSection{
 	-o-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+}
+
+#facts h3 {
+	margin-top:70px;
 }
