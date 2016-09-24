@@ -4,7 +4,7 @@
 }
 
 body { 
-	background: url(images/mattcorby.jpg) no-repeat left top fixed; 
+	background: #000 url(images/mattcorbysmall.jpg) no-repeat left top fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-ms-background-size: cover;
@@ -13,6 +13,20 @@ body {
 	font-family: "Open Sans", sans-serif;
 	color: #ddd;
 }
+
+@media (min-width:768px){
+	body{
+		background: #000 url(images/mattcorby.jpg) no-repeat left top fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-ms-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		font-family: "Open Sans", sans-serif;
+		color: #ddd;
+	}
+}
+
 
 /* TO ADD A BLACK TRANSLUSCENT BAND AT THE BOTTOM OF THE PAGE. NOT NEEDED ANYMORE SINCE BACKGROUND WAS LATER BLURRED
 
@@ -29,11 +43,8 @@ body::after {
 	width:100%;
 }*/
 
-@media (min-width: 992px){
-	nav {
-		display: block !important;
-	}
-}
+
+
 
 .fullheight {
 	height: 100vh;
@@ -58,15 +69,54 @@ iframe {
 	text-align:center;
 	margin-top:25px;
 }
-#home h1,h3{
-	text-align: center;
+
+#youtube {
+	display: none; /*visibility by media query */
 }
+
+@media (min-width: 880px){
+	#youtube {
+		display: block !important;
+		margin-top: 7%;
+	}
+}
+
 #home h1{
-	margin-bottom:20px;
 	font-family: 'Oswald', sans-serif;
 	font-size: 100px;
 	font-weight:700;
-	margin-top:40px;
+	margin-bottom:20px;
+}
+
+#titleblock{
+	position: absolute;
+	left:0;
+	right:0;
+	top:50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	text-align: center;
+	padding-left: 15px;
+	padding-right:15px;
+}
+	
+@media (min-width: 880px){
+	#titleblock {
+		margin-top:40px;
+		position: static;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+	}
+}	
+
+#home > div {
+	position: relative;
 }
 
 #home .fadein, #home a.bottomnav.fadein, nav.fadein { /*specificity of .bottomnav increased on purpose to override CSS declar. below */
@@ -88,8 +138,6 @@ iframe {
 	-o-transition-delay: 1s;
 	transition-delay: 1s;
 }
-
-
 
 h3{
 	letter-spacing:.05em;
@@ -120,6 +168,12 @@ nav {
 nav li > a{
 	font-size:32px;
 	line-height:65px;
+}
+
+@media (min-width: 992px){
+	nav {
+		display: block;
+	}
 }
 
 a.currentSection{
@@ -191,6 +245,8 @@ a.currentSection{
 
 #facts h3 {
 	margin-top:70px;
+	text-align: center;
+	margin-bottom: 50px;
 }
 
 #externalLink {
