@@ -3,8 +3,11 @@
 	padding:0;
 }
 
+html {
+	height:100%; /*looks like mobile browsers need this to make background image ok*/
+}
 body { 
-	background: #000 url(images/mattcorbysmall.jpg) no-repeat left top fixed; 
+	background: #000 url('../images/mattcorbysmall.jpg') no-repeat left top fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-ms-background-size: cover;
@@ -16,7 +19,7 @@ body {
 
 @media (min-width:768px){
 	body{
-		background: #000 url(images/mattcorby.jpg) no-repeat left top fixed;
+		background: #000 url('../images/mattcorby.jpg') no-repeat left top fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
